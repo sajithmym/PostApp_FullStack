@@ -13,7 +13,11 @@ export default function Home() {
 
   // Getting user details from local storage and storing in state variable
   const storedDetails = localStorage.getItem("info-sajithmym");
-  const Details = JSON.parse(storedDetails);
+
+  let Details : any;
+  
+  if (storedDetails !== null && storedDetails !== undefined) 
+    Details = JSON.parse(storedDetails);
 
   const [posts, setPosts] = useState([]); // State variable to store the list of posts
 
@@ -31,9 +35,7 @@ export default function Home() {
 
   // Function to check if the user is logged in or not
   const CheckLog = () => {
-    const storedDetails = localStorage.getItem("info-sajithmym");
-    const Details = JSON.parse(storedDetails);
-    if (!storedDetails) {
+    if (!Details) {
       Go("/log"); // If user is not logged in, navigate to the login page
     } else {
       setUsername(` ---> Welcome ${Details.name} ${Details.user} <---`); // Set the username state with the user's name and role
@@ -95,7 +97,7 @@ export default function Home() {
 
   // Function to handle search posts based on user input
   const handleSearch = () => {
-    const text = document.querySelector(".search"); // Get the value from the search input
+    const text : any = document.querySelector(".search"); // Get the value from the search input
     axios
       .post(
         `${backend_url}SearchPost`,
@@ -151,10 +153,8 @@ export default function Home() {
 
   // Function to handle creating a new post
   const handlePost = () => {
-    const storedDetails = localStorage.getItem("info-sajithmym");
-    const Details = JSON.parse(storedDetails);
-    const title = document.querySelector(".post_title"); // Get the value from the post title input
-    const content = document.querySelector(".post_Content"); // Get the value from the post content input
+    const title : any = document.querySelector(".post_title"); // Get the value from the post title input
+    const content : any = document.querySelector(".post_Content"); // Get the value from the post content input
 
     const Data = {
       title: title?.value, // Get the post title
@@ -241,30 +241,35 @@ export default function Home() {
       <h4>{username}</h4> {/* Displaying the username */}
       <button id="item" onClick={openPost}>
         Add a Post
-      </button> {/* Button to open the post creation form */}
-      {adminApprove} {/* Displaying the "Not Approved Posts" or "Reject Posts" button based on user role */}
+      </button>{" "}
+      {/* Button to open the post creation form */}
+      {adminApprove}{" "}
+      {/* Displaying the "Not Approved Posts" or "Reject Posts" button based on user role */}
       <button id="item" onClick={open}>
         Search Post
-      </button> {/* Button to open the search bar */}
-
+      </button>{" "}
+      {/* Button to open the search bar */}
       <h1>{Search}</h1> {/* Displaying the search bar component */}
-
       <h1>
         <u>Posts</u>
-      </h1> {/* Heading for the posts section */}
-
+      </h1>{" "}
+      {/* Heading for the posts section */}
       <center>
         <div className="container">
           {posts.length === 0 ? ( // Conditional rendering based on the number of posts
             <div>
-              <h2>No posts found</h2> {/* Message when no posts are available */}
+              <h2>No posts found</h2>{" "}
+              {/* Message when no posts are available */}
             </div>
           ) : (
             // Mapping through the list of posts and rendering each post
-            posts.map((post:any, index:any) => (
-              <div id={`single`} key={index}> {/* Div for each post */}
+            posts.map((post: any, index: any) => (
+              <div id={`single`} key={index}>
+                {" "}
+                {/* Div for each post */}
                 <h2>
-                  {index + 1}) {post.name}'s Post {/* Post number and author's name */}
+                  {index + 1}) {post.name}'s Post{" "}
+                  {/* Post number and author's name */}
                 </h2>
                 <h2>
                   <u>{post.title}</u> {/* Title of the post */}
@@ -274,17 +279,20 @@ export default function Home() {
                   <button onClick={() => deletePost(post._id)}>Delete</button>
                 ) : (
                   <p></p>
-                )} {/* Button to delete the post (visible to the post creator and admin) */}
+                )}{" "}
+                {/* Button to delete the post (visible to the post creator and admin) */}
                 <button id="comment" onClick={() => commentPost(post._id)}>
                   Write a Comment
-                </button> {/* Button to write a comment on the post */}
+                </button>{" "}
+                {/* Button to write a comment on the post */}
                 <h3>All Comments</h3> {/* Heading for the comments section */}
                 <div id="comments">
                   {post.comments.map((element: any, index: any) => (
                     <h5 key={index}>
                       {element.name}'s comment : {element.comment}
                     </h5>
-                  ))} {/* Displaying all comments on the post */}
+                  ))}{" "}
+                  {/* Displaying all comments on the post */}
                 </div>
               </div>
             ))

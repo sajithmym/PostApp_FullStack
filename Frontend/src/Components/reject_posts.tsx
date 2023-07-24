@@ -1,11 +1,17 @@
 // Importing necessary modules and components
 import axios from "axios"; // Importing axios library to make HTTP requests
-import React, { useEffect, useState } from "react"; // Importing necessary modules from 'react' library
+import  { useEffect, useState } from "react"; // Importing necessary modules from 'react' library
 
 // RejectPost component for displaying rejected posts
 export default function RejectPost() {
-  const storedDetails = localStorage.getItem("info-sajithmym"); // Retrieving user details from local storage
-  const Details = JSON.parse(storedDetails); // Parsing the user details
+  // Getting user details from local storage and storing in state variable
+  const storedDetails = localStorage.getItem("info-sajithmym");
+
+  let Details : any;
+  
+  if (storedDetails !== null && storedDetails !== undefined) 
+    Details = JSON.parse(storedDetails);
+    
   const [posts, setPosts] = useState([]); // State variable to store the rejected posts
 
   const backend_url = "http://127.0.0.1:8010/"; // Backend URL for making API requests

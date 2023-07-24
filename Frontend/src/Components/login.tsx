@@ -44,7 +44,7 @@ const LoginForm = () => {
             name: data[2], // User name
             email: data[3], // User email
           };
-          console.log(details); // Log the user details (for testing purposes)
+          // console.log(details); // Log the user details (for testing purposes)
           localStorage.setItem("info-sajithmym", JSON.stringify(details)); // Store the user details in local storage
           Go('/'); // Navigate to the home page
         }

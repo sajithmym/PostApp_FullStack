@@ -1,5 +1,5 @@
 import axios from "axios"; // Importing the axios library to make HTTP requests
-import React, { useEffect, useState } from "react"; // Importing necessary modules from 'react' library
+import { useEffect, useState } from "react"; // Importing necessary modules from 'react' library
 
 // The Approvel component for displaying and managing not approved posts
 export default function Approvel() {
