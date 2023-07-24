@@ -261,7 +261,7 @@ export default function Home() {
             </div>
           ) : (
             // Mapping through the list of posts and rendering each post
-            posts.map((post, index) => (
+            posts.map((post:any, index:any) => (
               <div id={`single`} key={index}> {/* Div for each post */}
                 <h2>
                   {index + 1}) {post.name}'s Post {/* Post number and author's name */}

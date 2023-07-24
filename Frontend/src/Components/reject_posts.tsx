@@ -41,7 +41,7 @@ export default function RejectPost() {
             </div>
           ) : (
             // If rejected posts are found, display them
-            posts.map((post, index) => (
+            posts.map((post:any, index:any) => (
               <div id={`single`} key={index}>
                 <h2>{index + 1}) Your Post</h2>
                 <h2>
