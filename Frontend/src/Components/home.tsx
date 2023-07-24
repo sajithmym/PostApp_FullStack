@@ -225,7 +225,7 @@ export default function Home() {
           },
         }
       )
-      .then((r) => {
+      .then(() => {
         console.log("comment sent"); // Log a message if the comment is successfully sent
       })
       .catch((err) => {
