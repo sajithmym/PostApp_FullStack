@@ -8,7 +8,7 @@ export default function RejectPost() {
   const Details = JSON.parse(storedDetails); // Parsing the user details
   const [posts, setPosts] = useState([]); // State variable to store the rejected posts
 
-  const backend_url = "http://127.0.0.1:8080/"; // Backend URL for making API requests
+  const backend_url = "http://127.0.0.1:8010/"; // Backend URL for making API requests
 
   // Function to fetch rejected posts from the backend
   const posting = () => {

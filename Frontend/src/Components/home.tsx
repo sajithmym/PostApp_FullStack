@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"; // Importing useNavigate hook fr
 // Home component for the main home page
 export default function Home() {
   const Go = useNavigate(); // Creating a navigate function using useNavigate hook for navigation
-  const backend_url = "http://127.0.0.1:8080/"; // Backend URL for making API requests
+  const backend_url = "http://127.0.0.1:8010/"; // Backend URL for making API requests
   const [username, setUsername] = useState(""); // State variable to store the username
   const [Search, setSearch] = useState<JSX.Element | null>(null); // State variable to manage the search bar
   const [click, setClick] = useState(false); // State variable to manage search bar visibility

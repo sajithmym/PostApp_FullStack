@@ -54,8 +54,8 @@ mongoose
     });
 
     // listen a server port
-    const server = app.listen(8080, () =>
-      console.log("DB Connected, Server : http://127.0.0.1:8080")
+    const server = app.listen(8010, () =>
+      console.log("DB Connected, Server : http://127.0.0.1:8010")
     );
   })
   .catch((err: any) => console.log(err));

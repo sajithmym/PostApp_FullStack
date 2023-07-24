@@ -6,7 +6,7 @@ import axios from 'axios'; // Importing the axios library to make HTTP requests
 
 // RegisterForm component for the registration form
 const RegisterForm = () => {
-  const backend_url = 'http://127.0.0.1:8080/'; // Backend URL for making API requests
+  const backend_url = 'http://127.0.0.1:8010/'; // Backend URL for making API requests
   const [username, setUsername] = useState(''); // State variable to store the user's username
   const [Useremail, SetUseremail] = useState(''); // State variable to store the user's email
   const [password, setPassword] = useState(''); // State variable to store the user's password
