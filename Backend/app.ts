@@ -4,6 +4,7 @@ const bodyParser = require("body-parser"); // Middleware to parse request bodies
 const mongoose = require("mongoose"); // MongoDB Object Modeling tool
 const bcrypt = require('bcryptjs'); // Library for hashing passwords
 const cors = require('cors'); // Middleware for enabling CORS (Cross-Origin Resource Sharing)
+const path = require('path'); // import path module
 
 // Importing MongoDB models and routes
 const Admin = require("./models/Admin_DB"); // Importing the Admin model
@@ -15,6 +16,24 @@ const app = express(); // Initializing Express application
 app.use(bodyParser.json()); // Configuring Express to use JSON as the request body parser
 
 const database_url = "mongodb://127.0.0.1:27017/project-db"; // MongoDB URL for connecting to the database
+
+const _dirname = path.dirname("")
+const buildPath = path.join(_dirname  , "../Frontend/dist");
+
+app.use(express.static(buildPath))
+
+app.get("/*", function(req:any, res:any){
+
+    res.sendFile(
+        path.join(__dirname, "../Frontend/dist/index.html"),
+        function (err) {
+          if (err) {
+            res.status(500).send(err);
+          }
+        }
+      );
+
+})
 
 app.use(cors()); // Enabling CORS for cross-origin requests
 
