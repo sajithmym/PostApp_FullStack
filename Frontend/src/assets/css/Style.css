@@ -1,0 +1,128 @@
+.form {
+  display: block;
+}
+
+body{
+  background-color: rgba(28, 18, 45, 0.187);
+  color: whitesmoke;
+}
+
+.field {
+  margin: 1%;
+  font-size: large;
+  padding: 1%;
+}
+
+.btn {
+  margin: 1%;
+  padding: 1%;
+  font-size: xx-large;
+}
+
+.navbar {
+  background-color: rgb(66, 47, 47);
+  display: flex;
+  padding: 0;
+  margin: 0.5%;
+  width: 100%;
+}
+
+#links {
+  margin-left: 380px;
+  font-size: larger;
+}
+
+#links-item {
+  margin-right: 30px;
+}
+
+#heading {
+  margin-top: 100px;
+}
+
+#item {
+  margin: 1% !important;
+}
+
+h1 {
+  margin-top: 40px;
+}
+
+#text {
+  font-size: x-large;
+  padding: 5px;
+}
+
+#btn {
+  font-size: large;
+  padding: 1%;
+}
+
+#postAdd {
+  margin: 5%;
+  background-color: rgba(0, 0, 0, 0.336);
+  padding: 2%;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+#postAdd:hover {
+  box-shadow: 0 0 20px white;
+  border-radius: 20px;
+}
+
+textarea {
+  width: 90%;
+  height: 100px;
+  text-align: center;
+  padding: 1%;
+  font-size: large;
+  color: lightblue;
+  background-color: inherit;
+}
+
+#postText {
+  margin-bottom: 30px;
+  width: 90%;
+  height: 30px;
+  text-align: center;
+  font-size: large;
+  color: lightblue;
+  background-color: inherit;
+}
+
+#postText::placeholder,
+textarea::placeholder,
+#text::placeholder {
+  color: rgb(15, 154, 197);
+}
+
+
+.container{
+  background: rgb(69, 63, 63);
+  width: 60%;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+#single{
+  background-color: rgba(89, 32, 42, 0.562);
+  padding: 5px;
+  font-weight: bold;
+  font-size: medium;
+  color: rgb(128, 173, 233);
+  margin: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px whitesmoke;
+}
+
+#comment{
+  margin-left: 10px;
+}
+
+#comments{
+  padding: 10px;
+  background-color: rgb(31, 14, 2);
+  margin: 15px;
+  border-radius: 20px;
+}
